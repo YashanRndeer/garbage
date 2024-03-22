@@ -1,0 +1,86 @@
+.userLogin_main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userLogin_sub{
+    padding: 1% 1%;
+    border:2px solid rgb(17, 238, 17);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+}
+
+.userLogin_sub > h1{
+
+}
+.userLogin_sub_login_sec{
+    display: flex;
+   
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+    background-color: rgb(253, 253, 253);
+
+}
+
+.userLogin_sub_login_sec > p {
+    font-size: 0.7rem;
+    color: red;
+}
+    
+
+.userLogin_sub_login_sec > div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3vh;
+}
+
+.userLogin_sub_login_sec > div > span{
+    border:1px solid rgb(153, 149, 149);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 7px;
+    padding-right: 7px;
+    width: 12%;
+}
+
+.userLogin_sub_login_sec > div > input{
+    height: 100%;
+    padding:0px 1.5vw;
+    border:1px solid rgb(153, 149, 149);
+    border-left: transparent;
+    outline: none;
+    width: 88%;
+}
+
+.userLogin_sub > button{
+    width: 100%;
+    cursor: pointer;
+    padding: 0.8vh 0px;
+    color: #fff;
+    background-color: rgb(70, 172, 240);
+    border:2px solid transparent;
+    text-transform: uppercase;
+    transition: all 0.4s ease-in-out;
+}
+
+.userLogin_sub > button:hover{
+    border:2px solid rgb(70, 172, 240);
+    color: rgb(70, 172, 240);
+    background-color: transparent;
+}
+
+.userLogin_sub > p{
+    width: 75%;
+    text-align: center;
+}
