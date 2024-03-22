@@ -5,6 +5,7 @@ import React from 'react'
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const UserLogin = () => {
     const navigation =  useNavigate();
@@ -12,6 +13,23 @@ const UserLogin = () => {
 
     const onSubmit = handleSubmit((data,e) =>{
       e.preventDefault()
+      try{
+
+        const loginHandler = async() =>{
+
+          let loginRespond = await axios.post("http://localhost:8080/user_login",{
+            ...data
+          }) 
+          console.log("loginRespond",loginRespond);
+        };
+
+  
+        loginHandler()
+
+      }catch(err){
+        console.log("login error")
+      }
+     
       console.log("form data",data);
     })
 
@@ -25,9 +43,9 @@ const UserLogin = () => {
         <span> 
         <FaUser />
         </span>
-        <input type="text"  placeholder="Username "  {...register("üsername",{required:"This field is required"})} />
+        <input type="text"  placeholder="Username "  {...register("username",{required:"This field is required"})} />
         </div>
-        {errors.üsername  && (<p>{errors.üsername.message}</p>)}
+        {errors.username  && (<p>{errors.username.message}</p>)}
        
         
       </section>

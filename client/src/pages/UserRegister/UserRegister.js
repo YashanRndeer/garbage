@@ -1,8 +1,10 @@
+
 import { Link, useNavigate } from "react-router-dom";
 import "./UserRegister.css";
 import userImage from "../../assets/user.png";
 import React from 'react'
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const UserRegister = () => {
     const navigation =  useNavigate();
@@ -11,6 +13,23 @@ const UserRegister = () => {
     const onSubmit = handleSubmit((data,e) =>{
       e.preventDefault()
       console.log("form data",data);
+      try{
+        const submitHandler = async ()  =>{
+
+          const signupRespond = await axios.post("http://localhost:8080/user_reg",{
+            ...data
+          })
+
+          if(signupRespond){
+            console.log("sign up respond",signupRespond);
+          }
+        }
+        submitHandler();
+
+      }catch(err){
+        console.log("signup error")
+      }
+     
       navigation("/user/home")
     })
   return (
@@ -23,8 +42,8 @@ const UserRegister = () => {
         <section className="serRegister_sub_sec register_sec_2">
           <div className="register_sec_2_input_div">
             <label>User name</label>
-            <input type="text"  placeholder=""   {...register("üsername",{required:"This field is required"})} />
-            {errors.üsername  && (<p>{errors.üsername.message}</p>)}
+            <input type="text"  placeholder=""   {...register("username",{required:"This field is required"})} />
+            {errors.username  && (<p>{errors.username.message}</p>)}
           </div>
           <div className="register_sec_2_input_div">
             <label>Email</label>
