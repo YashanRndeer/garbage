@@ -1,0 +1,64 @@
+.userHome_main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 10vh;
+    gap: 10vh;
+}
+
+.userHome_main > h1{
+    font-size: 3.5rem;
+}
+    
+
+.userHome_sub{
+    width: 60%;
+    padding: 5vh 0px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 5vh;
+   border:3px solid rgb(109, 109, 109);
+
+}
+
+.userHome_sub_sec{
+    display: flex;
+
+    align-items: center;
+    width: 70%;
+   
+}
+
+.userHome_sub_sec > span{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.userHome_sub_sec > span > *{
+    font-size: 8rem;
+    color: green;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+    
+}
+
+.userHome_sub_sec > span > *:hover{
+    scale: 1.1;
+}
+
+#complain_svg{
+    color: red;
+}
+
+.userHome_sub_sec > h3{
+    font-size: 2.5rem;
+    cursor: pointer;
+}

@@ -56,6 +56,8 @@ app.post("/user_reg", async(req,res)=>{
       })
     }
 
+    
+
     try{
       
      let exsistUserCount = await User.countDocuments({email:email});
@@ -100,6 +102,7 @@ app.post("/user_login",async(req,res)=>{
 
     let existUser;
 
+
     try{
       existUser = await User.findOne({username:username});
       if(!existUser){
@@ -107,15 +110,18 @@ app.post("/user_login",async(req,res)=>{
 
       }
 
-      console.log("exsist user",existUser.username,existUser.password)
+
+    
 
       let comparePassword = await bcrypt.compare(password,existUser.password);
-      console.log("compared password",comparePassword)
+     
       if(!comparePassword){
         res.send(400).json({
           message:"Invalid password try again"
         });
       }
+
+      
 
 
       const token = jwt.sign(
@@ -135,7 +141,7 @@ app.post("/user_login",async(req,res)=>{
       console.log(err)
     }
 
-    // console.log("body login",username,password)
+    
 })
 
 

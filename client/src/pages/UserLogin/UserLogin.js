@@ -20,11 +20,16 @@ const UserLogin = () => {
           let loginRespond = await axios.post("http://localhost:8080/user_login",{
             ...data
           }) 
+          if( loginRespond.status === 200){
+
+            navigation("/user/home");
+          }
           console.log("loginRespond",loginRespond);
         };
 
   
         loginHandler()
+       
 
       }catch(err){
         console.log("login error")

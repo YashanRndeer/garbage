@@ -21,6 +21,7 @@ const UserRegister = () => {
           })
 
           if(signupRespond){
+            navigation("/user")
             console.log("sign up respond",signupRespond);
           }
         }
@@ -30,7 +31,7 @@ const UserRegister = () => {
         console.log("signup error")
       }
      
-      navigation("/user/home")
+      
     })
   return (
     <div className="userRegister_main">
